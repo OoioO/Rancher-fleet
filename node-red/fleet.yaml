@@ -9,4 +9,11 @@ helm:
     persistence:
       storageClassName: local-path
     ingress:
-      enabled: false
+      annotations: {}
+      enabled: true
+      hosts:
+        - host: "example.com"
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+      tls: []
