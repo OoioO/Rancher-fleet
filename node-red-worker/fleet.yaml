@@ -17,3 +17,14 @@ helm:
             - path: /
               pathType: ImplementationSpecific
       tls: []
+
+# Target customization are used to determine how resources should be modified per target
+# Targets are evaluated in order and the first one to match a cluster is used for that cluster.
+targetCustomizations:
+# The name of target. If not specified a default name of the format "target000"
+# will be used. This value is mostly for display
+- name: prod
+  # Custom namespace value overriding the value at the root
+  namespace: rcluster3
+  # A specific clusterGroup by name that will be selected
+  clusterGroup: rcluster3
