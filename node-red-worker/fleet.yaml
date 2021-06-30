@@ -3,8 +3,8 @@ defaultNamespace: node-red
 helm:
   chart: node-red-worker
   repo: https://alberthahn.github.io/Krones-Marketplace
-  releaseName: node-red-fleet
-  version: 1.0.0
+  releaseName: node-red-fleet-worker
+  version: 1.0.1
   values:
     persistence:
       storageClassName: local-path
