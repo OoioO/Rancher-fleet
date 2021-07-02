@@ -3,10 +3,10 @@ defaultNamespace: node-red
 helm:
   chart: node-red-worker
   repo: https://alberthahn.github.io/Krones-Marketplace
-  releaseName: node-red-fleet-worker
+  releaseName: noderedfleetworker
   version: 1.0.2
   values:
     clusterName: global.fleet.clusterLabels.management.cattle.io/cluster-display-name
     ingress:
       enabled: true
-      host: noderedfleetworker.{{ .Values.clusterName }}.plgrnd.be
+      host: noderedfleetingress.{{ .Values.clusterName }}.plgrnd.be
