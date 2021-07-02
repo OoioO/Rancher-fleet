@@ -6,42 +6,7 @@ helm:
   releaseName: node-red-fleet-worker
   version: 1.0.1
   values:
-    persistence:
-      storageClassName: local-path
+    clusterName: global.fleet.clusterLabels.management.cattle.io/cluster-display-name
     ingress:
-      annotations: {}
       enabled: true
-      hosts:
-        - host: "example.com"
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
-      tls: []
-
-# Target customization are used to determine how resources should be modified per target
-# Targets are evaluated in order and the first one to match a cluster is used for that cluster.
-targetCustomizations:
-# The name of target. If not specified a default name of the format "target000"
-# will be used. This value is mostly for display
-- name: prod
-  helm:
-    chart: node-red-worker
-    repo: https://alberthahn.github.io/Krones-Marketplace
-    releaseName: node-red-fleet-worker
-    version: 1.0.1
-    values:
-      persistence:
-        storageClassName: local-path
-      ingress:
-        annotations: {}
-        enabled: true
-        hosts:
-          - host: "example.com"
-            paths:
-              - path: /
-                pathType: ImplementationSpecific
-        tls: []
-  # Custom namespace value overriding the value at the root
-  namespace: rcluster3
-  # A specific clusterGroup by name that will be selected
-  clusterGroup: rcluster3
+      host: node-red-fleet-worker.{{ .Values.clusterName }}.plgrnd.be
