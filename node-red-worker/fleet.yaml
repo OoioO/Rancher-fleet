@@ -9,4 +9,4 @@ helm:
     clusterName: global.fleet.clusterLabels.management.cattle.io/cluster-display-name
     ingress:
       enabled: true
-      host: noderedfleetworker.{{ .values.clusterName }}.poc-applications.plgrnd.be
+      host: noderedfleetworker.{{ .Values.clusterName }}.poc-applications.plgrnd.be
