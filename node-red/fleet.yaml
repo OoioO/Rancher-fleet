@@ -1,19 +1,11 @@
-defaultNamespace: node-red
+defaultNamespace: showcase
 
 helm:
-  chart: node-red-3d-dashboard
+  chart: node-red-dashboard
   repo: https://alberthahn.github.io/Krones-Marketplace
-  releaseName: node-red-fleet
+  releaseName: node-red-dashboard
   version: 1.2.0
   values:
-    persistence:
-      storageClassName: local-path
     ingress:
-      annotations: {}
+      host: node-red-3d-dashboard.poc-applications.plgrnd.be
       enabled: true
-      hosts:
-        - host: "example.com"
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
-      tls: []
