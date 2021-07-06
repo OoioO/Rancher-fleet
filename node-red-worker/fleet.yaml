@@ -20,6 +20,10 @@ targetCustomizations:
         management.cattle.io/cluster-display-name: rcluster2
   - name: filler
     helm:
+      chart: node-red-worker
+      repo: https://alberthahn.github.io/Krones-Marketplace
+      releaseName: node-red-worker-filler
+      version: 1.10.0
       values:
         ingress:
           host: node-red-worker.filler.poc-applications.plgrnd.be
