@@ -1,0 +1,11 @@
+defaultNamespace: showcase
+
+helm:
+  chart: masternode
+  repo: https://alberthahn.github.io/helm-charts/ 
+  releaseName: masternode
+  version: 0.1.0
+  values:
+    containerHost: masternode.showcase
+    ingress:
+      enabled: false

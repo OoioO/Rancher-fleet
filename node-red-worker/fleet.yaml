@@ -1,12 +1,29 @@
-defaultNamespace: node-red
+defaultNamespace: showcase
 
 helm:
   chart: node-red-worker
   repo: https://alberthahn.github.io/Krones-Marketplace
-  releaseName: noderedfleetworker
-  version: 1.0.7
+  releaseName: node-red-worker
+  version: 1.0.9
   values:
     clusterName: global.fleet.clusterLabels.management.cattle.io/cluster-display-name
     ingress:
       enabled: true
-      host: noderedfleetworker.{{ .Values.clusterName }}.poc-applications.plgrnd.be
+
+targetCustomizations:
+  - name: labeler
+    helm:
+      values:
+        ingress:
+          host: node-red-worker.labeler-{{ .Values.clusterName }}.poc-applications.plgrnd.be
+    clusterSelector:
+      matchLabels:
+        management.cattle.io/cluster-display-name: labeler
+  - name: filler
+    helm:
+      values:
+        ingress:
+          host: node-red-worker.filler-{{ .Values.clusterName }}.poc-applications.plgrnd.be
+    clusterSelector:
+      matchLabels:
+        management.cattle.io/cluster-display-name: filler
