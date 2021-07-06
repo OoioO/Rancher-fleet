@@ -4,7 +4,7 @@ helm:
   chart: node-red-worker
   repo: https://alberthahn.github.io/Krones-Marketplace
   releaseName: node-red-worker
-  version: 1.10.0
+  version: 1.12.0
   values:
     ingress:
       enabled: true
@@ -15,6 +15,9 @@ targetCustomizations:
       values:
         ingress:
           host: node-red-worker.labeler.poc-applications.plgrnd.be
+        persistence:
+          claimName: node-red-labeler-claimdata
+          volumeName: node-red-labeler-volume
     clusterSelector:
       matchLabels:
         management.cattle.io/cluster-display-name: rcluster2
@@ -23,10 +26,13 @@ targetCustomizations:
       chart: node-red-worker
       repo: https://alberthahn.github.io/Krones-Marketplace
       releaseName: node-red-worker-filler
-      version: 1.10.0
+      version: 1.12.0
       values:
         ingress:
           host: node-red-worker.filler.poc-applications.plgrnd.be
+        persistence:
+          claimName: node-red-filler-claimdata
+          volumeName: node-red-filler-volume
     clusterSelector:
       matchLabels:
         management.cattle.io/cluster-display-name: rcluster2
