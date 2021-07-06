@@ -6,7 +6,6 @@ helm:
   releaseName: node-red-worker
   version: 1.0.9
   values:
-    clusterName: global.fleet.clusterLabels.management.cattle.io/cluster-display-name
     ingress:
       enabled: true
 
@@ -15,7 +14,7 @@ targetCustomizations:
     helm:
       values:
         ingress:
-          host: node-red-worker.labeler-{{ .Values.clusterName }}.poc-applications.plgrnd.be
+          host: node-red-worker.labeler.poc-applications.plgrnd.be
     clusterSelector:
       matchLabels:
         management.cattle.io/cluster-display-name: labeler
@@ -23,7 +22,7 @@ targetCustomizations:
     helm:
       values:
         ingress:
-          host: node-red-worker.filler-{{ .Values.clusterName }}.poc-applications.plgrnd.be
+          host: node-red-worker.filler.poc-applications.plgrnd.be
     clusterSelector:
       matchLabels:
         management.cattle.io/cluster-display-name: filler
