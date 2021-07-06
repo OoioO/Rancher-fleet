@@ -1,7 +1,7 @@
 defaultNamespace: showcase
 
 helm:
-  chart: node-red-dashboard
+  chart: node-red-3d-dashboard
   repo: https://alberthahn.github.io/Krones-Marketplace
   releaseName: node-red-dashboard
   version: 1.2.0
