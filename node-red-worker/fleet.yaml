@@ -9,6 +9,3 @@ helm:
     ingress:
       host: node-red-worker.labeler.poc-applications.plgrnd.be
       enabled: true
-    persistence:
-      claimName: node-red-labeler-claimdata
-      volumeName: node-red-labeler-volume
