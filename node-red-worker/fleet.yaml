@@ -17,7 +17,7 @@ targetCustomizations:
           host: node-red-worker.labeler.poc-applications.plgrnd.be
     clusterSelector:
       matchLabels:
-        management.cattle.io/cluster-display-name: labeler
+        management.cattle.io/cluster-display-name: rcluster2
   - name: filler
     helm:
       values:
@@ -25,4 +25,4 @@ targetCustomizations:
           host: node-red-worker.filler.poc-applications.plgrnd.be
     clusterSelector:
       matchLabels:
-        management.cattle.io/cluster-display-name: filler
+        management.cattle.io/cluster-display-name: rcluster2
