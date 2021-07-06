@@ -4,7 +4,7 @@ helm:
   chart: node-red-worker
   repo: https://alberthahn.github.io/Krones-Marketplace
   releaseName: node-red-worker
-  version: 1.12.0
+  version: 1.13.0
   values:
     ingress:
       enabled: true
@@ -26,9 +26,10 @@ targetCustomizations:
       chart: node-red-worker
       repo: https://alberthahn.github.io/Krones-Marketplace
       releaseName: node-red-worker-filler
-      version: 1.12.0
+      version: 1.13.0
       values:
         ingress:
+          enabled: true
           host: node-red-worker.filler.poc-applications.plgrnd.be
         persistence:
           claimName: node-red-filler-claimdata
