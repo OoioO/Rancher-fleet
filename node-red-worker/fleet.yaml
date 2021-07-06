@@ -7,33 +7,8 @@ helm:
   version: 1.13.0
   values:
     ingress:
+      host: node-red-worker.labeler.poc-applications.plgrnd.be
       enabled: true
-
-targetCustomizations:
-  - name: labeler
-    helm:
-      values:
-        ingress:
-          host: node-red-worker.labeler.poc-applications.plgrnd.be
-        persistence:
-          claimName: node-red-labeler-claimdata
-          volumeName: node-red-labeler-volume
-    clusterSelector:
-      matchLabels:
-        management.cattle.io/cluster-display-name: rcluster2
-  - name: filler
-    helm:
-      chart: node-red-worker
-      repo: https://alberthahn.github.io/Krones-Marketplace
-      releaseName: node-red-worker-filler
-      version: 1.13.0
-      values:
-        ingress:
-          enabled: true
-          host: node-red-worker.filler.poc-applications.plgrnd.be
-        persistence:
-          claimName: node-red-filler-claimdata
-          volumeName: node-red-filler-volume
-    clusterSelector:
-      matchLabels:
-        management.cattle.io/cluster-display-name: rcluster2
+    persistence:
+      claimName: node-red-labeler-claimdata
+      volumeName: node-red-labeler-volume
