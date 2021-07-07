@@ -1,0 +1,16 @@
+defaultNamespace: showcase
+
+helm:
+  chart: node-red-worker
+  repo: https://alberthahn.github.io/Krones-Marketplace
+  releaseName: node-red-filler
+  version: 1.17.0
+  values:
+    ingress:
+      host: node-red-worker.filler.poc-applications.plgrnd.be
+      enabled: true
+    nodered:
+      flow: https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/files/filler-flows.json
+    persistence:
+      claimName: node-red-filler-claimdata
+      volumeName: node-red-filler-volume
