@@ -1,11 +1,13 @@
 defaultNamespace: showcase
 
 helm:
-  chart: node-red-3d-dashboard
+  chart: node-red-worker
   repo: https://alberthahn.github.io/Krones-Marketplace
   releaseName: node-red-dashboard
   version: 1.2.0
   values:
     ingress:
-      host: node-red-3d-dashboard.poc-applications.plgrnd.be
+      host: node-red-worker.dashboard.poc-applications.plgrnd.be
       enabled: true
+    nodered:
+      flow: https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/files/dashboard-flows.json
