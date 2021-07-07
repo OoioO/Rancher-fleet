@@ -4,8 +4,10 @@ helm:
   chart: node-red-worker
   repo: https://alberthahn.github.io/Krones-Marketplace
   releaseName: node-red-worker
-  version: 1.15.0
+  version: 1.16.0
   values:
     ingress:
       host: node-red-worker.labeler.poc-applications.plgrnd.be
       enabled: true
+    nodered:
+      flow: https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/files/labeler-flows.json
