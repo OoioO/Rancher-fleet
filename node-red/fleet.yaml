@@ -11,3 +11,6 @@ helm:
       enabled: true
     nodered:
       flow: https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/files/dashboard-flows.json
+    persistence:
+      claimName: node-red-dashboard-claimdata
+      volumeName: node-red-dashboard-volume

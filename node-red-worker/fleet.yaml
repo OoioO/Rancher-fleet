@@ -11,3 +11,6 @@ helm:
       enabled: true
     nodered:
       flow: https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/files/labeler-flows.json
+    persistence:
+      claimName: node-red-labeler-claimdata
+      volumeName: node-red-labeler-volume
