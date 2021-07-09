@@ -1,7 +1,0 @@
-defaultNamespace: showcase
-
-helm:
-  chart: telegram-observer
-  repo: https://alberthahn.github.io/Krones-Marketplace
-  releaseName: telegram-observer
-  version: 0.3.0
