@@ -2,7 +2,7 @@ defaultNamespace: showcase
 
 helm:
   chart: node-red-worker
-  repo: https://alberthahn.github.io/Krones-Marketplace
+  repo: https://OoioO.github.io/Krones-Marketplace
   releaseName: node-red-dashboard
   version: 1.17.0
   values:
@@ -10,7 +10,7 @@ helm:
       host: node-red-worker.dashboard.poc-applications.plgrnd.be
       enabled: true
     nodered:
-      flow: https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/files/dashboard-flows.json
+      flow: https://raw.githubusercontent.com/OoioO/Krones-Marketplace/main/files/dashboard-flows.json
     persistence:
       claimName: node-red-dashboard-claimdata
       volumeName: node-red-dashboard-volume
