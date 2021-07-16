@@ -4,7 +4,7 @@ helm:
   chart: node-red-worker
   repo: https://OoioO.github.io/Krones-Marketplace
   releaseName: node-red-packer
-  version: 1.17.0
+  version: 1.21.0
   values:
     ingress:
       host: node-red-worker.packer.poc-applications.plgrnd.be
